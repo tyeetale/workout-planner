@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Workout Planner - PPL Routine</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>💪 Workout Planner</h1>
+            <p class="subtitle">PPL Routine Generator & Progress Tracker</p>
+        </header>
+
+        <div class="tabs">
+            <button class="tab-btn active" data-tab="schedule">Schedule</button>
+            <button class="tab-btn" data-tab="workouts">Manage Workouts</button>
+            <button class="tab-btn" data-tab="progress">Progress</button>
+        </div>
+
+        <!-- Schedule Tab -->
+        <div class="tab-content active" id="schedule-tab">
+            <div class="week-view">
+                <div class="day-card" data-day="monday">
+                    <div class="day-header">
+                        <h2>Monday - Push</h2>
+                        <button class="randomize-btn" data-day="monday">🎲 Randomize</button>
+                    </div>
+                    <div class="exercises-list" id="monday-exercises"></div>
+                    <button class="start-workout-btn" data-day="monday">Start Workout</button>
+                </div>
+
+                <div class="day-card" data-day="tuesday">
+                    <div class="day-header">
+                        <h2>Tuesday - Pull</h2>
+                        <button class="randomize-btn" data-day="tuesday">🎲 Randomize</button>
+                    </div>
+                    <div class="exercises-list" id="tuesday-exercises"></div>
+                    <button class="start-workout-btn" data-day="tuesday">Start Workout</button>
+                </div>
+
+                <div class="day-card" data-day="wednesday">
+                    <div class="day-header">
+                        <h2>Wednesday - Legs</h2>
+                        <button class="randomize-btn" data-day="wednesday">🎲 Randomize</button>
+                    </div>
+                    <div class="exercises-list" id="wednesday-exercises"></div>
+                    <button class="start-workout-btn" data-day="wednesday">Start Workout</button>
+                </div>
+
+                <div class="day-card" data-day="thursday">
+                    <div class="day-header">
+                        <h2>Thursday - Push</h2>
+                        <button class="randomize-btn" data-day="thursday">🎲 Randomize</button>
+                    </div>
+                    <div class="exercises-list" id="thursday-exercises"></div>
+                    <button class="start-workout-btn" data-day="thursday">Start Workout</button>
+                </div>
+
+                <div class="day-card" data-day="friday">
+                    <div class="day-header">
+                        <h2>Friday - Pull</h2>
+                        <button class="randomize-btn" data-day="friday">🎲 Randomize</button>
+                    </div>
+                    <div class="exercises-list" id="friday-exercises"></div>
+                    <button class="start-workout-btn" data-day="friday">Start Workout</button>
+                </div>
+
+                <div class="day-card" data-day="saturday">
+                    <div class="day-header">
+                        <h2>Saturday - Legs</h2>
+                        <button class="randomize-btn" data-day="saturday">🎲 Randomize</button>
+                    </div>
+                    <div class="exercises-list" id="saturday-exercises"></div>
+                    <button class="start-workout-btn" data-day="saturday">Start Workout</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Manage Workouts Tab -->
+        <div class="tab-content" id="workouts-tab">
+            <div class="workout-manager">
+                <div class="day-section">
+                    <h3>Push Day Exercises (Monday & Thursday)</h3>
+                    <div class="exercise-input-group">
+                        <input type="text" id="push-exercise-input" placeholder="Exercise name (e.g., Bench Press)">
+                        <button id="add-push-btn">Add Exercise</button>
+                    </div>
+                    <ul class="exercise-list" id="push-exercises-list"></ul>
+                </div>
+
+                <div class="day-section">
+                    <h3>Pull Day Exercises (Tuesday & Friday)</h3>
+                    <div class="exercise-input-group">
+                        <input type="text" id="pull-exercise-input" placeholder="Exercise name (e.g., Pull-ups)">
+                        <button id="add-pull-btn">Add Exercise</button>
+                    </div>
+                    <ul class="exercise-list" id="pull-exercises-list"></ul>
+                </div>
+
+                <div class="day-section">
+                    <h3>Legs Day Exercises (Wednesday & Saturday)</h3>
+                    <div class="exercise-input-group">
+                        <input type="text" id="legs-exercise-input" placeholder="Exercise name (e.g., Squats)">
+                        <button id="add-legs-btn">Add Exercise</button>
+                    </div>
+                    <ul class="exercise-list" id="legs-exercises-list"></ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Progress Tab -->
+        <div class="tab-content" id="progress-tab">
+            <div class="progress-view">
+                <h2>Workout History</h2>
+                <div id="progress-list"></div>
+            </div>
+        </div>
+
+        <!-- Workout Modal -->
+        <div id="workout-modal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2 id="modal-day-title"></h2>
+                <div id="modal-exercises"></div>
+                <button id="complete-workout-btn" class="complete-btn">Complete Workout</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

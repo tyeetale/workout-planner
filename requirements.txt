@@ -1,0 +1,2 @@
+# Optional: For AI analysis features
+openai>=1.0.0
